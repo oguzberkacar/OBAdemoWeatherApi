@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title class="ion-text-center">Oğuz Berk Açar</ion-title>
+    <ion-title class="ion-text-center">An demo app for finding weather</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="form">
+    <ion-card>
+      <ion-item>
+        <ion-label position="fixed">City</ion-label>
+        <ion-input id="input" color="dark" position="fixed" placeholder="Please enter a city" type="text"
+          size="block" formControlName="name"></ion-input>
+        <ion-button (click)="show()">
+          <ion-icon name="search-outline"></ion-icon>
+        </ion-button>
+        
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item lines="none">
+        <ion-icon slot="start" name="location"></ion-icon>
+        <ion-header>{{name}}</ion-header>
+      </ion-item>
+
+      <ion-item>
+        <ion-label slot="end">{{today | date: "EEE dd MMM"}}</ion-label>
+        <ion-img [src]="icon"></ion-img>
+        <ion-label slot="end">{{temp}} Degree</ion-label>
+      </ion-item>
+    </ion-card>
+  </form>
+</ion-content>

@@ -1,0 +1,7 @@
+{
+  "name": "OBAdemoWeatherApi",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
