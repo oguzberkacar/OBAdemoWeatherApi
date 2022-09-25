@@ -30,7 +30,7 @@ export class HomePage implements OnInit {
 
   ngOnInit() {
     this.form = new HomePageForm(this.formBuilder).createForm();
-    this.loadData('Antalya');
+    this.loadData('London');
   }
 
   show() {
