@@ -1,34 +1,37 @@
 <ion-header>
-  <ion-toolbar color="primary">
-    <ion-title class="ion-text-center">Oğuz Berk Açar</ion-title>
-    <ion-title class="ion-text-center">An demo app for finding weather</ion-title>
+  <ion-toolbar color="primary" class="flex items-center justify-center">
+    <div class="text-center text-xs sm:text-sm md:text-base ">This app created by Oğuz Berk Açar for Demo Purposes</div>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <form [formGroup]="form">
-    <ion-card>
-      <ion-item>
-        <ion-label position="fixed">City</ion-label>
-        <ion-input id="input" color="dark" position="fixed" placeholder="Please enter a city" type="text"
-          size="block" formControlName="name"></ion-input>
-        <ion-button (click)="show()">
-          <ion-icon name="search-outline"></ion-icon>
-        </ion-button>
-        
-      </ion-item>
-    </ion-card>
-    <ion-card>
-      <ion-item lines="none">
-        <ion-icon slot="start" name="location"></ion-icon>
-        <ion-header>{{name}}</ion-header>
-      </ion-item>
-
-      <ion-item>
-        <ion-label slot="end">{{today | date: "EEE dd MMM"}}</ion-label>
-        <ion-img [src]="icon"></ion-img>
-        <ion-label slot="end">{{temp}} Degree</ion-label>
-      </ion-item>
-    </ion-card>
-  </form>
+  <div  class="w-full flex flex-col items-center justify-center  h-screen bg-lime-400 ">
+    <form (ngSubmit)="show()" [formGroup]="form">
+      <ion-card>
+        <ion-item >
+          <ion-label class="text-xl text-black" position="fixed">City</ion-label>
+          <ion-input id="input" class="placeholder:text-black"  position="fixed" placeholder="Please enter a city" type="text"
+            size="block" formControlName="name"></ion-input>
+          <ion-button type="submit">
+            <ion-icon name="search-outline"></ion-icon>
+          </ion-button>
+          
+        </ion-item>
+      </ion-card>
+      <ion-card>
+        <ion-item class="flex" lines="none">
+          <ion-icon slot="start" name="location"></ion-icon>
+          <h1 class="flex-1">{{name}}</h1>
+        </ion-item>
+  
+        <ion-item>
+          <ion-label slot="end">{{today | date: "EEE dd MMM"}}</ion-label>
+          <ion-img class="w-24 p-5 h-24" [src]="icon"></ion-img>
+          <ion-label slot="end">{{temp}} Degree</ion-label>
+        </ion-item>
+      </ion-card>
+    </form>
+    <div class="bg-white w-fit px-10 rounded-md py-3 shadow-md">This page created for just mobile view.</div>
+  </div>
+ 
 </ion-content>
